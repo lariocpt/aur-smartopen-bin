@@ -1,0 +1,19 @@
+pkgbase = smartopen-bin
+	pkgdesc = Open files, folders and URLs through configurable command menus
+	pkgver = 0.2.0
+	pkgrel = 1
+	url = https://github.com/lariocpt/smartopen
+	arch = x86_64
+	arch = aarch64
+	license = MIT
+	optdepends = yazi: file manager whose Enter opens the menu (smartopen yazi apply)
+	optdepends = broot: tree navigator whose Enter opens the menu (smartopen broot apply)
+	provides = smartopen=0.2.0
+	conflicts = smartopen
+	conflicts = opn
+	source_x86_64 = smartopen-bin-0.2.0-x86_64.tar.gz::https://github.com/lariocpt/smartopen/releases/download/v0.2.0/smartopen-x86_64-unknown-linux-musl-v0.2.0.tar.gz
+	sha256sums_x86_64 = REPLACE_WITH_SHA256SUMS_ENTRY
+	source_aarch64 = smartopen-bin-0.2.0-aarch64.tar.gz::https://github.com/lariocpt/smartopen/releases/download/v0.2.0/smartopen-aarch64-unknown-linux-musl-v0.2.0.tar.gz
+	sha256sums_aarch64 = REPLACE_WITH_SHA256SUMS_ENTRY
+
+pkgname = smartopen-bin

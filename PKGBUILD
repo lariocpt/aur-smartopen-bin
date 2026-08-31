@@ -3,11 +3,13 @@ pkgname=smartopen-bin
 _pkgname=smartopen
 pkgver=0.2.0
 pkgrel=1
-pkgdesc="Open files, folders and URLs through configurable command menus — from yazi, broot, your shell or a keystroke"
+pkgdesc="Open files, folders and URLs through configurable command menus"
 arch=('x86_64' 'aarch64')
 url="https://github.com/lariocpt/smartopen"
 license=('MIT')
-provides=("$_pkgname=$pkgver" "opn")
+provides=("$_pkgname=$pkgver")
+# `opn` on the AUR is an unrelated Go program; this package ships a file of that name,
+# so it conflicts with it but does not provide it.
 conflicts=("$_pkgname" "opn")
 # The upstream binaries are static musl builds, so there is no libc dependency at all.
 # yazi and broot are what the tool integrates with, not what it needs to run.
