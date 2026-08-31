@@ -26,8 +26,14 @@ package() {
     install -Dm0644 "$srcdir/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
     install -Dm0644 "$srcdir/README.md" "$pkgdir/usr/share/doc/$pkgname/README.md"
     # Completions and the man page come from the binary itself.
-    "$srcdir/$_pkgname" completions bash | install -Dm0644 /dev/stdin "$pkgdir/usr/share/bash-completion/completions/$_pkgname"
-    "$srcdir/$_pkgname" completions zsh  | install -Dm0644 /dev/stdin "$pkgdir/usr/share/zsh/site-functions/_$_pkgname"
-    "$srcdir/$_pkgname" completions fish | install -Dm0644 /dev/stdin "$pkgdir/usr/share/fish/vendor_completions.d/$_pkgname.fish"
-    "$srcdir/$_pkgname" man | install -Dm0644 /dev/stdin "$pkgdir/usr/share/man/man1/$_pkgname.1"
+    # Completions and the man page come from the binary itself — and from BOTH names.
+    # `opn` is what yazi, broot and the niri keybind invoke, and each binary names itself
+    # from argv[0], so `opn completions zsh` emits `#compdef opn`. Packaging only the
+    # long name left anyone who types `opn` with no completions and no `man opn`.
+    for _bin in "$_pkgname" opn; do
+        "$srcdir/$_bin" completions bash | install -Dm0644 /dev/stdin "$pkgdir/usr/share/bash-completion/completions/$_bin"
+        "$srcdir/$_bin" completions zsh  | install -Dm0644 /dev/stdin "$pkgdir/usr/share/zsh/site-functions/_$_bin"
+        "$srcdir/$_bin" completions fish | install -Dm0644 /dev/stdin "$pkgdir/usr/share/fish/vendor_completions.d/$_bin.fish"
+        "$srcdir/$_bin" man | install -Dm0644 /dev/stdin "$pkgdir/usr/share/man/man1/$_bin.1"
+    done
 }
