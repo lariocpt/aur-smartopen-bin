@@ -12,8 +12,8 @@ pkgbase = smartopen-bin
 	conflicts = smartopen
 	conflicts = opn
 	source_x86_64 = smartopen-bin-0.2.0-x86_64.tar.gz::https://github.com/lariocpt/smartopen/releases/download/v0.2.0/smartopen-x86_64-unknown-linux-musl-v0.2.0.tar.gz
-	sha256sums_x86_64 = REPLACE_WITH_SHA256SUMS_ENTRY
+	sha256sums_x86_64 = 61bf2ec20ec548b06e7bf4becc9c90dd278f9643a8ad4d12620fff7f2aa92e08
 	source_aarch64 = smartopen-bin-0.2.0-aarch64.tar.gz::https://github.com/lariocpt/smartopen/releases/download/v0.2.0/smartopen-aarch64-unknown-linux-musl-v0.2.0.tar.gz
-	sha256sums_aarch64 = REPLACE_WITH_SHA256SUMS_ENTRY
+	sha256sums_aarch64 = 598a0c791595f938161e096e9b9cef544fc8b1f5bae568a68ca91d56fec9c1be
 
 pkgname = smartopen-bin

@@ -17,8 +17,8 @@ optdepends=('yazi: file manager whose Enter opens the menu (smartopen yazi apply
             'broot: tree navigator whose Enter opens the menu (smartopen broot apply)')
 source_x86_64=("$pkgname-$pkgver-x86_64.tar.gz::$url/releases/download/v$pkgver/$_pkgname-x86_64-unknown-linux-musl-v$pkgver.tar.gz")
 source_aarch64=("$pkgname-$pkgver-aarch64.tar.gz::$url/releases/download/v$pkgver/$_pkgname-aarch64-unknown-linux-musl-v$pkgver.tar.gz")
-sha256sums_x86_64=('REPLACE_WITH_SHA256SUMS_ENTRY')
-sha256sums_aarch64=('REPLACE_WITH_SHA256SUMS_ENTRY')
+sha256sums_x86_64=('61bf2ec20ec548b06e7bf4becc9c90dd278f9643a8ad4d12620fff7f2aa92e08')
+sha256sums_aarch64=('598a0c791595f938161e096e9b9cef544fc8b1f5bae568a68ca91d56fec9c1be')
 
 package() {
     install -Dm0755 "$srcdir/$_pkgname" "$pkgdir/usr/bin/$_pkgname"
